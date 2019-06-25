@@ -1,11 +1,16 @@
 github:
   user_or_org: buijennifer
 channels:
-  targets:
-  - [jenniferbui, main]
+  sources:
+    targets:
+  -[ jenniferbui, main]
+provider:
+  osx: travis
+  linux: circle
+  win: appveyor
 travis:
   secure:
-    BINSTAR_TOKEN: HdLjpxj19ZDsvsgWL4xPJVyTEubDbgCoQsbrAbYfy/GxnCrUkIMwnmnZHV9BIv9ENP168sxZNTL4FcUG3tjYCOzj8FaY8/qj/Nc5e3mObPuxgBruym/Ml5XCT32P7t4PZ+O/i21VM91Zf6EZWbwy8Jn3MQdC/tIWekIgJkpTmaqeX98Rw0TreyRXTJp8TUlNVhJzXm1U/k8yXkM3Bg10qrn0dR5sRscylyIb72MeVFtELopQ1jF9/co/3mv5Qv1efubRk4T1AUOsISP2eKtvTeZohD9S5TYL+l0NQyjfhmNHbQ+NA4gNZ4JJy/abRZ7XKNqDoiX/GhqBjgjZEh/nU9gn56ejz3erH0LOCzzbZIxvtwYmJBXrX8FO/hw/Co/2OhmunFoFyKCCl7BEbKtlFD2s+/ufQ7hzd2vWDOO2bL+tj7FtKIsB2ZPG9AGotRBmf/4eHAVjK83eRScPmB5QtsLPZjRC7iFiRksis036B6HKL0RClxVpo9nHOqUGUSUEhIW8xbKA1xu9/zGbqreWfurNGLblOsPCIrrCmgHcBOvGl0WztrdtKxOUUkblmEOx26uOBR0Hy1YmuqMBav+O5UDNbNckHJuf3rVbDrSeqUS6mwttbTHoW5uoeXylkY8gTNuy2ViE7ZJMKIz3B//fg1dTl8Popejf88nMeJ7WJ0k=
+    BINSTAR_TOKEN: GmLEuV4iPgo+jtvaOZ5HFWIly8EWf/TqKOaZz2UaBun8/bnucqvAN/wSQBbtgqJrbz1Llafm3/aweoOk4htQyrZwEMK2wgJsdmp3yu9D7e+Ujy47gt9S17yijuNz6YgsH+2a2ZACnqzXo6HH97FvZbB0aaqhrGdyXW5XDe9qxnN1VHqjWckcIX6XSD2puudbAIgjBJL2htxAMt9vERt1TESI1vbWUa7okxYi3u5VPqu4YSSndQdPQjBE361JJClH1KEDhOxz9UZgrmqPqkRrmxbkvsoYEARkvGSLX2/42XB8tHpunPhaL/WSa+GxkO9zL9RTwWXKvtdhRxUxo1uQeboZb3fwP9snyC9NUxbLCz76wO+FpH/3btQozT18fbkqln3R9i9TBXw5BPolFhIfbq6k/L/ZhyZKsauTCO015R/vNSabKu8aeLPdLa/lwm3SAwAmUsAwvACP9Hepkg+mYjNJwFhP9rSSt9n5G2/umiozII06SE1KrWiRhI+vI/9Z57qlHhSVM/9RbVPi45MeQnr86wnL1rGqBdQQsrCD5hNruoYLEr2Jgw7dod1ozNpR+uaBmqTou5eTZMv2FO/qOcBkYGFBVPwVRj2a3t6zEgFwY/ZgZU6mInDLVbVyZjjJQXDhQ66VbWvtW+PobBRNkhfNQFxaSRMtoatnqYGjNGc=
 appveyor:
   secure:
     BINSTAR_TOKEN: yz5KKf5dQbaqyqnlq32LSt5BLNK10eqavFqOzTixaikBeNmG3G/fX870+XR0Sih/

@@ -16,7 +16,7 @@ build:
 requirements:
   host:
     - python
-
+    - setuptools
   run:
     - jsonschema >=3.0.0
     - numpy

@@ -32,8 +32,6 @@ jobs:
     env:
       BINSTAR_TOKEN: $(BINSTAR_TOKEN)
       echo eq(variables['Build.SourceBranch'], 'refs/heads/master')
-      echo Release.Artifacts.{Primary artifact alias}.SourceBranch
-      echo Release.Artifacts.{Primary artifact alias}.SourceBranchName
 
   - script: |
         export CI=azure

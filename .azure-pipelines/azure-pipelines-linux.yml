@@ -29,8 +29,8 @@ jobs:
 
   - script: |
 #      echo "Setting BINSTAR_TOKEN variable for master branch"
-      echo "success"
     condition: eq(variables['Build.SourceBranch'], 'refs/heads/master')      
+    displayName: condition
 
   - script: |
         export CI=azure

@@ -29,7 +29,7 @@ jobs:
 
   - script: |
 #      echo "Setting BINSTAR_TOKEN variable for master branch"
-       echo "success"
+      echo "success"
     condition: eq(variables['Build.SourceBranch'], 'refs/heads/master')      
 
   - script: |

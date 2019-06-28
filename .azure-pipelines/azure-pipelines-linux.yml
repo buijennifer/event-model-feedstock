@@ -16,7 +16,7 @@ jobs:
         DOCKER_IMAGE: condaforge/linux-anvil-comp7
       linux_python3.7:
         CONFIG: linux_python3.7
-        UPLOAD_PACKAGES: eq(variables['Build.SourceBranch'], 'refs/heads/master' )
+        UPLOAD_PACKAGES: False # eq(variables['Build.SourceBranch'], 'refs/heads/master' )
         DOCKER_IMAGE: condaforge/linux-anvil-comp7
   steps:
   # configure qemu binfmt-misc running.  This allows us to run docker containers
@@ -28,9 +28,12 @@ jobs:
     displayName: Configure binfmt_misc
 
   - script: |
-      echo "Setting BINSTAR_TOKEN variable for master branch"
+#      echo "Setting BINSTAR_TOKEN variable for master branch"
     env:
       BINSTAR_TOKEN: $(BINSTAR_TOKEN)
+      echo eq(variables['Build.SourceBranch'], 'refs/heads/master')
+      echo variables['Build.SourceBranch']
+      echo variables['Build.SourceBranchName']
 
   - script: |
         export CI=azure

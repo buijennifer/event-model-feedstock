@@ -29,7 +29,11 @@ jobs:
 
   - script: |
       export CI=azure
-      export UPLOAD_PACKAGES=False
+      if [ "$(Build.SourceBranch)" == 'refs/heads/master' ]; then
+          export UPLOAD_PACKAGES=True
+      else
+          export UPLOAD_PACKAGES=False
+      fi
       echo 'BUILDSOURCE BRANCH' $(Build.SourceBranch)
       .azure-pipelines/run_docker_build.sh
     env:

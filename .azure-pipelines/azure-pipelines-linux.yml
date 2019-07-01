@@ -12,7 +12,7 @@ jobs:
     matrix:
       linux_python3.6:
         CONFIG: linux_python3.6
-        UPLOAD_PACKAGES: and(eq(variables['Build.SourceBranch'], 'refs/heads/master'))
+        UPLOAD_PACKAGES: True  #and(eq(variables['Build.SourceBranch'], 'refs/heads/master'))
         DOCKER_IMAGE: condaforge/linux-anvil-comp7
       linux_python3.7:
         CONFIG: linux_python3.7
@@ -35,5 +35,5 @@ jobs:
         export CI=azure
         .azure-pipelines/run_docker_build.sh
     env:
-      BINSTAR_TOKEN: $(BINSTAR_TOKEN)
+      BINSTAR_TOKEN: if [[ variables['Build.SourceBranch'] = 'refs/heads/master']]; then echo $(BINSTAR_TOKEN); else echo 'none'; fi
     displayName: Run docker build

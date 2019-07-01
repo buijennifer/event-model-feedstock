@@ -18,8 +18,6 @@ jobs:
         CONFIG: linux_python3.7
         UPLOAD_PACKAGES: False
         DOCKER_IMAGE: condaforge/linux-anvil-comp7
-  variables:
-    a: $[and(eq(variables['Build.SourceBranch'], 'refs/heads/master'))]
   steps:
   # configure qemu binfmt-misc running.  This allows us to run docker containers
   # embedded qemu-static
@@ -31,6 +29,8 @@ jobs:
 
   - script: |
       echo $A
+    env:
+      a: $(and(eq(variables['Build.SourceBranch'], 'refs/heads/master')))
     #condition: eq(variables['Build.SourceBranch'], 'refs/heads/master')
     displayName: variables
 

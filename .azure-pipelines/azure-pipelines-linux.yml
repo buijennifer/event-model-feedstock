@@ -30,6 +30,7 @@ jobs:
   - script: |
       export CI=azure
       .azure-pipelines/run_docker_build.sh
+      echo 'BUILDSOURCE BRANCH' $(variables['Build.SourceBranch'])
     env:
       UPLOAD_PACKAGES: $( eq(variables['Build.SourceBranch'], 'refs/heads/master') )
       BINSTAR_TOKEN: $(BINSTAR_TOKEN)

@@ -50,5 +50,5 @@ build: off
 
 test_script:
     - conda.exe build recipe -m .ci_support\%CONFIG%.yaml
-deploy_script:
-    - cmd: upload_package .\ .\recipe .ci_support\%CONFIG%.yaml
+#deploy_script:
+#    - cmd: upload_package .\ .\recipe .ci_support\%CONFIG%.yaml

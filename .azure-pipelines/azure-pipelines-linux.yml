@@ -30,7 +30,9 @@ jobs:
   - script: |
       export CI=azure
       echo 'BUILDSOURCE BRANCH' $(Build.SourceBranch)
-      echo $( eq(Build.SourceBranch, 'refs/heads/master') 
+      echo $( eq(Build.SourceBranch, 'refs/heads/master'))
+      echo $[ eq(Build.SourceBranch, 'refs/heads/master')]
+      echo $( eq(variables['Build.SourceBranch'], 'refs/heads/master')) 
       .azure-pipelines/run_docker_build.sh
     env:
       UPLOAD_PACKAGES: False #$( eq(Build.SourceBranch, 'refs/heads/master') )

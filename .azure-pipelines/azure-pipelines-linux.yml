@@ -16,10 +16,8 @@ jobs:
         DOCKER_IMAGE: condaforge/linux-anvil-comp7
       linux_python3.7:
         CONFIG: linux_python3.7
-        UPLOAD_PACKAGES: False
+        UPLOAD_PACKAGES: True
         DOCKER_IMAGE: condaforge/linux-anvil-comp7
-  variables:
-    myTest = and(eq(variables['Build.SourceBranch'], 'refs/heads/master'))
   steps:
   # configure qemu binfmt-misc running.  This allows us to run docker containers
   # embedded qemu-static
@@ -30,14 +28,14 @@ jobs:
     displayName: Configure binfmt_misc
 
   - script: |
-      echo $(myTest)
     # $(and(eq(variables['Build.SourceBranch'], 'refs/heads/master')))
     #condition: eq(variables['Build.SourceBranch'], 'refs/heads/master')
+    env:
+      UPLOAD_PACKAGES: $( if eq(variables['Build.SourceBranch'], 'refs/heads/master') )
+      BINSTAR_TOKEN: $(BINSTAR_TOKEN)
     displayName: variables
 
   - script: |
       export CI=azure
       .azure-pipelines/run_docker_build.sh
-    env:
-      BINSTAR_TOKEN: $(BINSTAR_TOKEN)
     displayName: Run docker build

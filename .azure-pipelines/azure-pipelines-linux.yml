@@ -12,7 +12,7 @@ jobs:
     matrix:
       linux_python3.6:
         CONFIG: linux_python3.6
-        UPLOAD_PACKAGES: $[and(eq(variables['Build.SourceBranch'], 'refs/heads/master'))]
+        UPLOAD_PACKAGES: False  #$[and(eq(variables['Build.SourceBranch'], 'refs/heads/master'))]
         DOCKER_IMAGE: condaforge/linux-anvil-comp7
       linux_python3.7:
         CONFIG: linux_python3.7
@@ -27,9 +27,13 @@ jobs:
     condition: not(startsWith(variables['CONFIG'], 'linux_64'))
     displayName: Configure binfmt_misc
 
+  variables:
+    a: $[and(eq(variables['Build.SourceBranch'], 'refs/heads/master'))]
+
   - script: |
-    condition: eq(variables['Build.SourceBranch'], 'refs/heads/master')      
-    displayName: condition
+      echo $(a)
+    #condition: eq(variables['Build.SourceBranch'], 'refs/heads/master')
+    displayName: variables
 
   - script: |
         export CI=azure

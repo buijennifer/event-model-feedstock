@@ -28,14 +28,9 @@ jobs:
     displayName: Configure binfmt_misc
 
   - script: |
-    # $(and(eq(variables['Build.SourceBranch'], 'refs/heads/master')))
-    #condition: eq(variables['Build.SourceBranch'], 'refs/heads/master')
+      export CI=azure
+      .azure-pipelines/run_docker_build.sh
     env:
       UPLOAD_PACKAGES: $( if eq(variables['Build.SourceBranch'], 'refs/heads/master') )
       BINSTAR_TOKEN: $(BINSTAR_TOKEN)
-    displayName: variables
-
-  - script: |
-      export CI=azure
-      .azure-pipelines/run_docker_build.sh
     displayName: Run docker build

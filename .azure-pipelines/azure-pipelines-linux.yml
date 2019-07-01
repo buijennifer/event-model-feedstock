@@ -32,6 +32,6 @@ jobs:
       .azure-pipelines/run_docker_build.sh
       echo 'BUILDSOURCE BRANCH' $(Build.SourceBranch)
     env:
-      UPLOAD_PACKAGES: $( eq(Build.SourceBranch, 'refs/heads/master') )
+      UPLOAD_PACKAGES: False #$( eq(Build.SourceBranch, 'refs/heads/master') )
       BINSTAR_TOKEN: $(BINSTAR_TOKEN)
     displayName: Run docker build

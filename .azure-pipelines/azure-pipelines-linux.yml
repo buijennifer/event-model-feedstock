@@ -31,6 +31,6 @@ jobs:
       export CI=azure
       .azure-pipelines/run_docker_build.sh
     env:
-      UPLOAD_PACKAGES: $( if eq(variables['Build.SourceBranch'], 'refs/heads/master') )
+      UPLOAD_PACKAGES: $( eq(variables['Build.SourceBranch'], 'refs/heads/master') )
       BINSTAR_TOKEN: $(BINSTAR_TOKEN)
     displayName: Run docker build

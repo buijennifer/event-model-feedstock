@@ -3,9 +3,10 @@
 # -*- mode: yaml -*-
 
 trigger:
-  batch: True
+  batch: true
   branches:
-    include: master
+    include:
+    - master
 jobs:
 - job: linux
   pool:

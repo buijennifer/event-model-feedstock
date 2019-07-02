@@ -2,10 +2,6 @@
 # update the conda-forge.yml and/or the recipe/meta.yaml.
 # -*- mode: yaml -*-
 
-trigger:
-  batch: True
-  branches:
-    include: master
 jobs:
 - job: linux
   pool:

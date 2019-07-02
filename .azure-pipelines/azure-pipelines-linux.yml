@@ -2,11 +2,6 @@
 # update the conda-forge.yml and/or the recipe/meta.yaml.
 # -*- mode: yaml -*-
 
-trigger:
-  batch: true
-  branches:
-    include:
-    - master
 jobs:
 - job: linux
   pool:
@@ -25,6 +20,11 @@ jobs:
         UPLOAD_PACKAGES: True
         UPLOAD_ON_BRANCH: master
         DOCKER_IMAGE: condaforge/linux-anvil-comp7
+  trigger:
+    batch: true
+    branches:
+      include:
+      - master
   steps:
   # configure qemu binfmt-misc running.  This allows us to run docker containers
   # embedded qemu-static

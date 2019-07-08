@@ -14,3 +14,4 @@ azure:
   org_or_user: buijennifer 
   project_name: nsls2
 min_py_ver: "36"
+branch: master

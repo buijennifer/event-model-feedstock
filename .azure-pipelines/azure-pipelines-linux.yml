@@ -30,6 +30,9 @@ jobs:
     displayName: Configure binfmt_misc
 
   - script: |
+      echo '$(BINSTAR_TOKEN)'
+
+  - script: |
       export CI=azure
       if [ "$(Build.SourceBranch)" == "refs/heads/$UPLOAD_ON_BRANCH" -a $UPLOAD_PACKAGES == "True" ]; then
           export UPLOAD_PACKAGES=True

@@ -13,7 +13,7 @@ appveyor:
   secure:
     BINSTAR_TOKEN: yz5KKf5dQbaqyqnlq32LSt5BLNK10eqavFqOzTixaikBeNmG3G/fX870+XR0Sih/
 azure:
-  org_or_user: buijennifer 
+  user_or_org: buijennifer 
   project_name: nsls2
   upload_packages: True
 min_py_ver: "36"

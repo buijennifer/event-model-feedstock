@@ -10,13 +10,13 @@ source:
 
 build:
   number: 9
-   script: "{{ PYTHON }} -m pip install . --no-deps -vv"
+  script: "{{ PYTHON }} -m pip install . --no-deps -vv"
   skip: True  # [py<36]
 
 requirements:
   host:
     - python
-    - setuptools
+    - pip
   run:
     - jsonschema >=3.0.0
     - numpy
